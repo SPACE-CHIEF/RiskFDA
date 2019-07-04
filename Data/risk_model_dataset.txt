@@ -1,0 +1,65 @@
++++++++++++++++++++++
++Risk Model Features+
++++++++++++++++++++++
+Inspection ID:
+	Unique ID for a single inspection.
+City:
+	The city that the drug facility is located at.
+State:
+	The state that the drug facility is located at.
+Facility name:
+	The name of the facility name.
+Inspection Classification:
+	The outcome of the inspection. The outcome has to be NAI, VAI, or OAI.
+Age of facility:
+	Age since the facility was constructed.
+Main Drug Name:
+	The name of the drug that the facility produces the most.
+Reason for failure:
+	The violation code/s for the failure of the inspection.
+	Same format as the citations dataset.
+Size of facility:
+	The size of the facility in sq. feet.
+Other drugs:
+	Other drugs that the facility produces besides the main drug.
+Bachelors count:
+	How many employees at the facility have a bachelors degree.
+Masters count:
+	How many employees at the facility have a masters degree.
+PHD Count:
+	How many employees at the facility have a PHD.
+Number of employees:
+	The number of employees at the facility.
+Annual revenue:
+	The annual revenue of the company.
+Project area:
+	Which of the six systems did the inspector focus on?
+	options are:
+	1) Bioresearch monitoring
+	2) Drug Quality Assurance
+	3) Over-the-counter evalution
+	4) Postmarket Survey. and Epidemiology
+	5) Prescription Drug Advertising
+	6) Unapproved or Misbranded drugs
+Date of Inspection:
+	The date that the inspection was conducted.
+Generic or brand?:
+	Is the main drug being manufactured Generic or Brand?
+	Should be a Yes or No.
+Price of Drug:
+	The market value price of the main drug being manufactured.
+Speciality Drug?:
+	Is the main drug or other drugs manufactured at this facility a specialty drug? (Yes/No)
+	A specialty drug are classified as high cost and/or high touch. Specialty drugs are 
+	often biologics "Drugs derived from living cells" that are injectable or infused.
+	They are used to treat complex or rare chronic conditions such as cancer, H.I.V., Hepatitis C, etc.
+Over-the-Counter drug?
+	Is the main drug manufactured at this facility an Over-the-Counter drug? (Yes/No).
+Number of facilities:
+	Number of manufacutring facilities that the company has in the U.S. and Outside the U.S.
+	Including this manufacturing facility.
+Warning Letter?
+	Did the facility receive a warning letter previously or as the result of this inspection? (Yes/No)
+Medicine focus:
+	What medical treatment area does the facility focus on?
+	Pain killers, allergies, cancer, HIV, arthritis, nasal congestant, cold medicine, etc.
