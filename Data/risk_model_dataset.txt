@@ -171,7 +171,7 @@ Strength of Active:
 	Owner:
 		Kelly
 	(OpenFDA API)
-Active Ingredients:
+List of Active:
 	List of active ingredients in the main drug manufactured at the facility. 
 	https://open.fda.gov/apis/drug/ndc/
 	(OpenFDA API)
@@ -180,7 +180,6 @@ Active Ingredients:
 List of Inactive:
 	List of inactive ingredients in the main drug manufactured at the facility.
 	Example of API query that retrieves number of inactive ingredients from 2009 - 2019.
-	(OpenFDA API)
 	https://api.fda.gov/drug/label.json?search=effective_time:[20090601+TO+20190703]&count=inactive_ingredient
 	(OpenFDA API)
 	Owner:
