@@ -1,0 +1,31 @@
+Order of Points,Primary ID,Name of Process,Ingredient/Drug,Location,Process,Date of Process,Longitude,Latitude,Score,State,Inspection Classification
+3,1,Walgreens,Tylenol,"8414 Old Keene Mill Rd Unit A, Springfield, VA 22152",Pharmacy,8/31/2016,-77.2344962,38.7790513,1,Virginia,NAI
+1,1,Amgen,Acetaminophen,"2202 N. Westshore Blvd, Tampa, Florida 33607",Drug Manufacturer,8/8/2016,-82.5242445,27.9506083,2,Florida,OAI
+2,1,Alden Medical LLC,Tylenol,"360 Cold Spring Ave, West Springfield, MA, 01089",Distributor,3/15/2016,-72.62562454,42.09538325,3,Massachusetts,VAI
+1,2,AAA Pharmaceuticals,Acetaminophen,"681 Main St, Lumberton, NJ 08048",Drug Manufacturer,6/30/2017,-74.80042984,39.97577163,2,New Jersey,NAI
+2,2,CVS Corporation,Advil,"Tucson, Arizona",Pharmacy,11/10/2017,-110.926,32.2219,1,Arizona,NAI
+3,2,Distributor 2,Advil,"Columbus, Ohio",Distributor,10/18/2017,-83.0007065,39.9622601,3,Ohio,OAI
+3,3,Costco,Drug 3,"Norfolk, Virginia",Pharmacy,11/21/2018,-76.2929252,36.8462923,2,Virginia,VAI
+2,3,Distributor 3,Drug 3,"North Hempstead, New York",Distributor,11/8/2018,-73.618684,40.7063185,1,New York,OAI
+1,3,Drug Manufacturer 3,Drug 3,"San Antonio, Texas",Drug Manufacturer,11/10/2017,-98.4951,29.4246,2,Texas,NAI
+3,4,Walmart,Drug 4,"Orlando, Florida",Pharmacy,5/23/2017,-81.3790388,28.5421097,3,Florida,VAI
+1,4,3M Pharmaceuticals,Drug 4,"Fort Worth, Texas",Drug Manufacturer,11/11/2016,-97.3327459,32.753177,1,Texas,OAI
+2,4,Distributor 4,Drug 4,"Colorado Springs, Colorado",Distributor,12/5/2016,-104.8253485,38.8339578,2,Colorado,VAI
+3,5,Pharmacy 5,Drug 5,"Oakland, California",Pharmacy,4/8/2016,-122.2713563,37.8044557,3,California,OAI
+1,5,Drug Manufacturer 5,Drug 5,"Greensboro, North Carolina",Drug Manufacturer,1/14/2016,-79.7919754,36.0726355,1,North Carolina,NAI
+2,5,Distributor 5,Drug 5,"Jersey City, New Jersey",Distributor,1/7/2016,-74.0776417,40.7281575,2,New Jersey,NAI
+3,6,Pharmacy 6,Drug 6,"Chandler, Arizona",Pharmacy,9/16/2016,-111.8413317,33.3062223,3,Arizona,NAI
+2,6,Distributor 6,Drug 6,"Dallas, Texas",Distributor,7/18/2016,-96.7968559,32.7762719,1,Texas,NAI
+1,6,Drug Manufacturer 6,Drug 6,"Buffalo, New York",Drug Manufacturer,6/28/2016,-78.8783922,42.8867166,2,New York,VAI
+3,7,Pharmacy 7,Drug 7,"Plano, Texas",Pharmacy,4/12/2017,-96.6925096,33.0136764,3,Texas,VAI
+2,7,Distributor 7,Drug 7,"Kansas City, Missouri",Distributor,1/19/2017,-94.5781416,39.100105,1,Missouri,VAI
+1,7,Drug Manufacturer 7,Drug 7,"Cincinnatti, Ohio",Drug Manufacturer,9/21/2016,-80.5816,40.6555,2,Ohio,NAI
+3,8,Pharmacy 8,Drug 8,"Pittsburg, Pennsylvania",Pharmacy,12/20/2017,-79.9900861,40.4416941,3,Pennsylvania,OAI
+2,8,Distributor 8,Drug 8,"Orlando, Florida",Distributor,8/29/2017,-81.3790388,28.5421097,1,Florida,VAI
+1,8,Drug Manufacturer 8,Drug 8,"New Orleans, Louisiana",Drug Manufacturer,8/24/2017,-90.0701156,29.9499323,3,Louisiana,OAI
+3,9,Pharmacy 9,Drug 9,"Chicago, Illinois",Pharmacy,3/27/2018,-87.6244212,41.8755616,2,Illinois,OAI
+2,9,Distributor 9,Drug 9,"Hialeah, Florida",Distributor,3/23/2018,-80.2781057,25.8575963,2,Florida,NAI
+1,9,Drug Manufacturer 9,Drug 9,"Baltimore, Maryland",Drug Manufacturer,1/1/2018,-76.610759,39.2908816,1,Maryland,VAI
+3,10,Pharmacy 10,Drug 10,"Mesa, Arizona",Pharmacy,8/30/2018,-111.8314773,33.4151117,3,Arizona,VAI
+2,10,Distributor 10,Drug 10,"Fort Worth, Texas",Distributor,7/11/2018,-97.3327459,32.753177,2,Texas,VAI
+1,10,Drug Manufacturer 10,Drug 10,"Honolulu, Hawaii",Drug Manufacturer,6/27/2018,-157.8556764,21.304547,1,Hawaii,VAI
