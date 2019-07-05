@@ -3,35 +3,50 @@
 +++++++++++++++++++++
 Inspection ID:
 	Unique ID for a single inspection.
+	(Create yourself)
 City:
 	The city that the drug facility is located at.
+	(Can be acquired via openFDA API or from datasets on sharepoint)
 State:
 	The state that the drug facility is located at.
+	(Can be acquired via openFDA API or from datasets on sharepoint)
 Facility name:
 	The name of the facility name.
+	(Can be acquired via openFDA API or from datasets on sharepoint)
 Inspection Classification:
 	The outcome of the inspection. The outcome has to be NAI, VAI, or OAI.
+	(Can be acquired via openFDA API)
 Age of facility:
 	Age since the facility was constructed.
+	(Google)
 Main Drug Name:
 	The name of the drug that the facility produces the most.
+	(Google)
 Reason for failure:
 	The violation code/s for the failure of the inspection.
 	Same format as the citations dataset.
+	(Can be acquired via openFDA API or from datasets *Inspections_Citations_Merged* on sharepoint)
 Size of facility:
 	The size of the facility in sq. feet.
+	(Google)
 Other drugs:
 	Other drugs that the facility produces besides the main drug.
+	(Can be acquired via openFDA API)
 Bachelors count:
 	How many employees at the facility have a bachelors degree.
+	(Google or create dummy data)
 Masters count:
 	How many employees at the facility have a masters degree.
+	(Google or create dummy data)
 PHD Count:
 	How many employees at the facility have a PHD.
+	(Google or create dummy data)
 Number of employees:
 	The number of employees at the facility.
+	(Google or create dummy data)
 Annual revenue:
 	The annual revenue of the company.
+	(Gooogle)
 Project area:
 	Which of the six systems did the inspector focus on?
 	options are:
@@ -41,52 +56,70 @@ Project area:
 	4) Postmarket Survey. and Epidemiology
 	5) Prescription Drug Advertising
 	6) Unapproved or Misbranded drugs
+	(Citations_Inspections_Merged.csv or Citations.csv from sharepoint)
 Date of Inspection:
 	The date that the inspection was conducted.
+	(OpenFDA API)
 Generic or brand?:
 	Is the main drug being manufactured Generic or Brand? (Yes/No)
+	(OpenFDA API)
 Price of Drug:
 	The market value price of the main drug being manufactured.
+	(Google or create dummy data)
 Speciality Drug?:
 	Is the main drug or other drugs manufactured at this facility a specialty drug? (Yes/No)
 	A specialty drug are classified as high cost and/or high touch. Specialty drugs are 
 	often biologics "Drugs derived from living cells" that are injectable or infused.
 	They are used to treat complex or rare chronic conditions such as cancer, H.I.V., Hepatitis C, etc.
+	(Google or OpenFDA API)
 Over-the-Counter drug?
 	Is the main drug manufactured at this facility an Over-the-Counter drug? (Yes/No).
 	https://api.fda.gov/drug/label.json?count=openfda.product_type.exact
+	(OpenFDA API)
 Number of facilities:
 	Number of manufacutring facilities that the company has in the U.S. and Outside the U.S.
 	Including this manufacturing facility.
+	(Google or create dummy data)
 Warning Letter?
 	Did the facility receive a warning letter as a result of this inspection? (Yes/No)
+	(Look for it on Citatations.csv or Inspections_Citations_Merged.csv on sharepoint or look for the data on FDA dashboard)
 Medicine focus:
 	What is the drug class of the main drug?
 	antidotes, antihistamines, nasal steroids, nasal preperations, etc.
+	(OpenFDA API)
 Past recalls:
 	The amount of recalls up to date of the manufacturer
 	https://open.fda.gov/apis/drug/label/example-api-queries/
+	(Recalls dataset on sharepoint)
 Class I Recalls:
 	The amount of Class I recalls of the drug manufacturer up to date.
 	A query example of how to use the API to get this kind of data.
 	https://api.fda.gov/drug/enforcement.json?search=classification:"Class+I"&limit=5
+	(OpenFDA API)
 Class II Recalls:
 	The amount of Class II recalls of the drug manufacturer up to date.
 	https://open.fda.gov/apis/drug/label/example-api-queries/
+	(OpenFDA API)
 Class III Recalls:
 	The amount of Class III recalls of the drug manufacturer up to date.
 	https://open.fda.gov/apis/drug/label/example-api-queries/
+	(OpenFDA API)
 Strength of Active:
 	The strength of the active ingredients in the main drug (in mg)
 	https://open.fda.gov/apis/drug/ndc
+	(OpenFDA API)
 Active Ingredients:
 	List of active ingredients in the main drug manufactured at the facility. 
 	https://open.fda.gov/apis/drug/ndc/
+	(OpenFDA API)
 List of Active:
 	List of active ingredients in the main drug manufactured at the facility.
 	Example of API query that retrieves list of active ingredients of 5 LOTION products.
 	https://api.fda.gov/drug/ndc.json?search=dosage_form:"LOTION"count=active_ingredients.name&limit=5
+	(OpenFDA API)
 List of Inactive:
 	List of inactive ingredients in the main drug manufactured at the facility.
 	Example of API query that retrieves number of inactive ingredients from 2009 - 2019.
+	(OpenFDA API)
 	https://api.fda.gov/drug/label.json?search=effective_time:[20090601+TO+20190703]&count=inactive_ingredient
+	(OpenFDA API)
