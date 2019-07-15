@@ -33,7 +33,8 @@ layout = [
                 multi=True,
                 clearable=False,
                 options=[{'label': i, 'value': i} for i in df['Ingredient/Drug'].unique()],
-                style={'margin-bottom': 10}
+                style={'margin-bottom': 10},
+                placeholder="Select a Drug"
             ),
             className="six columns"),
         html.Div(
@@ -43,7 +44,8 @@ layout = [
                 multi=True,
                 clearable=False,
                 options=[{'label': i, 'value': i} for i in df['State'].unique()],
-                style={'margin-bottom': 10}
+                style={'margin-bottom': 10},
+                placeholder="Select a State"
             ),
             className="six columns"),
         html.Div(
