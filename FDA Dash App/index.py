@@ -8,8 +8,8 @@ import flask
 import plotly.plotly as py
 from plotly import graph_objs as go
 import math
-from app import app, server
-from apps import risk, supply, recalls, adverse_events
+from app import app
+from apps import supply, recalls
 
 app.layout = html.Div(
     [
@@ -36,8 +36,8 @@ app.layout = html.Div(
                 children=[
                     # dcc.Tab(label="Risk", value="risk_tab"),
                     # dcc.Tab(label="Adverse Events", value="adverse_tab"),
-                    dcc.Tab(label="Supply Chain", value="supply_tab"),
-                    # dcc.Tab(id= "recalls",label="Recalls Events", value="recalls_tab")
+                    dcc.Tab(label="Supply Chain", value="supply_tab", style={'font-weight': 'bold'}),
+                    dcc.Tab(id= "recalls",label="Recalls Events", value="recalls_tab")
                 ],
                 value="app_tabs",
             )
@@ -57,8 +57,6 @@ app.layout = html.Div(
 
         # Tab content
         html.Div(id="tab_content", className="row", style={"margin": "2% 3%"}),
-
-        html.Link(href="https://use.fontawesome.com/releases/v5.2.0/css/all.css", rel="stylesheet"),
         html.Link(
             href="https://cdn.rawgit.com/plotly/dash-app-stylesheets/2d266c578d2a6e8850ebce48fdb52759b2aef506/stylesheet-oil-and-gas.css",
             rel="stylesheet"),
@@ -80,10 +78,10 @@ def render_content(tab):
     #     return risk.layout
     # elif tab == "adverse_tab":
     #     return adverse_events.layout
-    # elif tab == "recalls_tab":
-    #     return recalls.layout
     if tab == "supply_tab":
         return supply.layout
+    elif tab == "recalls_tab":
+         return recalls.layout
     else:
         return supply.layout
 

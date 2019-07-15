@@ -6,12 +6,12 @@ import plotly.graph_objs as go
 import pandas as pd
 import us
 from app import app
-
+import os
 mapbox_access_token = 'pk.eyJ1IjoiY29sbWVydCIsImEiOiJjanhsZWh5N3MwNWQxM25xcDB6bzNvYTU5In0.-mGdgCvd0Yy-mWhXTjJcsQ'
 
 
 def load_data():
-    df = pd.read_csv('C:/Users/Robert/Desktop/Supply_v2.csv')
+    df = pd.read_csv('Dash Data/Supply_v2.csv')
     print(df.columns)
     return df
 
@@ -22,14 +22,20 @@ layout = [
     # Drop down and Map,
     html.Div([
         html.Div(
+            html.P('Supply chain by State and Drug Name', style={"fontSize": 20, "font-family": "Halvetica Neue", "textAlign": "center", 'margin-top': 40, 'margin-bottom': 5})
+        ),
+    ]),
+    html.Div([
+        html.Div(
             dcc.Dropdown(
                 id='drug-selected',
                 value=['Virginia'],
                 multi=True,
                 clearable=False,
                 options=[{'label': i, 'value': i} for i in df['Ingredient/Drug'].unique()],
-            ), className="two columns"
-        ),
+                style={'margin-bottom': 10}
+            ),
+            className="six columns"),
         html.Div(
             dcc.Dropdown(
                 id='state-selected',
@@ -37,20 +43,17 @@ layout = [
                 multi=True,
                 clearable=False,
                 options=[{'label': i, 'value': i} for i in df['State'].unique()],
-            ), className="two columns"
-        ),
-    ]),
-    html.Div([
-        html.P("Display facilities by State and Drug"),
+                style={'margin-bottom': 10}
+            ),
+            className="six columns"),
+        html.Div(
             dcc.Graph(
                 id='map-plot',
-                style={"height": "50%", "width": "48%"},
-                config=dict(displayModeBar=False)
-            )
-    ], className="row")
+                config=dict(displayModeBar=False),
+            ),
+            className="twelve columns")
+    ],className="row"),
 ]
-
-
 @app.callback(
     Output('map-plot', 'figure'),
     [Input('drug-selected', 'value'),
@@ -85,7 +88,8 @@ def map_maker(drugs, states):
             autosize = True,
             hovermode = 'closest',
             showlegend = True,
-            height = 700,
+            height = 600,
+            margin=dict(l = 20, r = 20, t = 20, b = 20),
             mapbox={
                 'accesstoken': mapbox_access_token,
                 'bearing': 0,
@@ -95,7 +99,7 @@ def map_maker(drugs, states):
                 },
                 'pitch': 30,
                 'zoom': 3,
-                'style': 'mapbox://styles/mapbox/light-v9'
+                'style': 'light'
             }
         )
         return {'data': trace, 'layout': layout}
