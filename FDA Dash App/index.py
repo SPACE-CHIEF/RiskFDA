@@ -82,6 +82,8 @@ def render_content(tab):
         return supply.layout
     elif tab == "recalls_tab":
          return recalls.layout
+    elif tab == "adverse_events_tab":
+         return adverse_events.layout
     else:
         return supply.layout
 

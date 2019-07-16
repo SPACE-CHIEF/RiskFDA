@@ -22,12 +22,12 @@ layout = [
     # Drop down and Map,
     html.Div([
         html.Div(
-            html.P('Supply chain by State and Drug Name', style={"fontSize": 20, "font-family": "Halvetica Neue", "textAlign": "center", 'margin-top': 40, 'margin-bottom': 5})
+            html.P('Supply Chain by State and Drug Name', style={"fontSize": 20, "font-family": "Halvetica Neue", "textAlign": "center", 'margin-top': 40, 'margin-bottom': 5})
         ),
     ]),
     html.Div([
         html.Div(
-            dcc.Dropdown(
+            dcc.Dropdown( #Drugs dropdown
                 id='drug-selected',
                 value=['Virginia'],
                 multi=True,
@@ -38,7 +38,7 @@ layout = [
             ),
             className="six columns"),
         html.Div(
-            dcc.Dropdown(
+            dcc.Dropdown( #State dropdown
                 id='state-selected',
                 value=['Tylenol'],
                 multi=True,
