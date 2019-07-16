@@ -37,7 +37,7 @@ app.layout = html.Div(
                     # dcc.Tab(label="Risk", value="risk_tab"),
                     # dcc.Tab(label="Adverse Events", value="adverse_tab"),
                     dcc.Tab(label="Supply Chain", value="supply_tab", style={'font-weight': 'bold'}),
-                    dcc.Tab(id= "recalls",label="Recalls Events", value="recalls_tab")
+                    dcc.Tab(id="recalls", label="Recalls Events", value="recalls_tab", style={'font-weight': 'bold'})
                 ],
                 value="app_tabs",
             )
@@ -81,7 +81,7 @@ def render_content(tab):
     if tab == "supply_tab":
         return supply.layout
     elif tab == "recalls_tab":
-         return recalls.layout
+        return recalls.layout
     else:
         return supply.layout
 

@@ -1,4 +1,3 @@
-import dash
 import dash_html_components as html
 import dash_core_components as dcc
 from dash.dependencies import Input, Output
@@ -6,32 +5,32 @@ import plotly.graph_objs as go
 import pandas as pd
 import us
 from app import app
-import os
+
 mapbox_access_token = 'pk.eyJ1IjoiY29sbWVydCIsImEiOiJjanhsZWh5N3MwNWQxM25xcDB6bzNvYTU5In0.-mGdgCvd0Yy-mWhXTjJcsQ'
 
 
 def load_data():
     df = pd.read_csv('Dash Data/Supply_v2.csv')
-    print(df.columns)
     return df
+
 
 df = load_data()
 cols = df.columns
 
 layout = [
-    # Drop down and Map,
+    # Title of the page
     html.Div([
         html.Div(
             html.P('Supply chain by State and Drug Name', style={"fontSize": 20, "font-family": "Halvetica Neue", "textAlign": "center", 'margin-top': 40, 'margin-bottom': 5})
         ),
     ]),
+    # Drop down and Map,
     html.Div([
         html.Div(
             dcc.Dropdown(
                 id='drug-selected',
-                value=['Virginia'],
+                value=['Tylenol'],
                 multi=True,
-                clearable=False,
                 options=[{'label': i, 'value': i} for i in df['Ingredient/Drug'].unique()],
                 style={'margin-bottom': 10},
                 placeholder="Select a Drug"
@@ -40,9 +39,8 @@ layout = [
         html.Div(
             dcc.Dropdown(
                 id='state-selected',
-                value=['Tylenol'],
+                value=['Virginia'],
                 multi=True,
-                clearable=False,
                 options=[{'label': i, 'value': i} for i in df['State'].unique()],
                 style={'margin-bottom': 10},
                 placeholder="Select a State"
@@ -81,7 +79,7 @@ def map_maker(drugs, states):
                         color = 'rgb(0, 0, 128)',
                         opacity=0.7
                     ),
-                    text=dfff[['Name of Process', 'Process', 'Score', 'Ingredient/Drug', 'Location']],
+                    text=str(dfff[['Name of Process', 'Process', 'Score', 'Ingredient/Drug', 'Location']]),
                     hoverinfo = 'text',
                     name=drug
                 )
@@ -90,7 +88,7 @@ def map_maker(drugs, states):
             autosize = True,
             hovermode = 'closest',
             showlegend = True,
-            height = 600,
+            height=700,
             margin=dict(l = 20, r = 20, t = 20, b = 20),
             mapbox={
                 'accesstoken': mapbox_access_token,
