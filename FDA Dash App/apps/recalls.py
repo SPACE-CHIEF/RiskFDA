@@ -31,36 +31,33 @@ layout = [
         ),
     ]),
     # Drop downs and time series graph
-    html.Div([
-        html.Div(
-            dcc.Dropdown(
-                id='drug-selected',
-                value=['Virginia'],
-                multi=True,
-                options=[{'label': i, 'value': i} for i in recalls['Ingredient/Drug'].unique()],
-                style={'margin-bottom': 10},
-                placeholder="Select a Drug"
-            ),
-            className="two columns"),
-        html.Div(
-            dcc.Dropdown(
-                id='facility-selected',
-                value=['3M'],
-                multi=True,
-                options=[{'label': i, 'value': i} for i in recalls['Name of Process'].unique()],
-                style={'margin-bottom': 10},
-                placeholder="Select a facility"
-            ),
-            className="two columns"),
-        html.Div(
-            dcc.Graph(
-                id='time-graph',
-            ),
-            className="six columns"
-        )
-    ], className="row"),
+        html.Div([
+            html.Div([
+                html.Div(
+                    dcc.Dropdown(
+                    id='drug-selected',
+                    value=['Virginia'],
+                    multi=True,
+                    options=[{'label': i, 'value': i} for i in recalls['Ingredient/Drug'].unique()],
+                    style={'margin-bottom': 10, "float": "center"},
+                    placeholder="Select a Drug"),
+                className="one-fourth column"),
+                html.Div(
+                    dcc.Dropdown(
+                    id='facility-selected',
+                    value=['3M'],
+                    multi=True,
+                    options=[{'label': i, 'value': i} for i in recalls['Name of Process'].unique()],
+                    style={'margin-bottom': 10, "float": "center"},
+                    placeholder="Select a facility"),
+                className="one-fourth column"),
+        ], className="fixed-gutter-grid"),
+                html.Div(
+                    dcc.Graph(
+                    id='time-graph'),
+                    className="one-half column")
+    ], className="l-wrap")
 ]
-
 
 @app.callback(
     Output('time-graph', 'figure'),

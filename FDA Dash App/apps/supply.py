@@ -21,7 +21,7 @@ layout = [
     # Title of the page
     html.Div([
         html.Div(
-            html.P('Supply chain by State and Drug Name', style={"fontSize": 20, "font-family": "Halvetica Neue", "textAlign": "center", 'margin-top': 40, 'margin-bottom': 5})
+            html.P('Supply Chain by State and Drug Name', style={"fontSize": 20, "font-family": "Halvetica Neue", "textAlign": "center", 'margin-top': 40, 'margin-bottom': 5})
         ),
     ]),
     # Drop down and Map,

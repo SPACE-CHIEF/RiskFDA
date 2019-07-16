@@ -8,12 +8,9 @@ import os
 #STATIC_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static')
 
 server = flask.Flask(__name__)
-app = dash.Dash(__name__, server=server)
-
-"""
-app.layout = html.Div(
-
-)
-"""
+external_stylesheets = [
+    'https://github.com/averma1/ladyphideas/blob/master/css/style.css'
+]
+app = dash.Dash(__name__, server=server, external_stylesheets=external_stylesheets)
 
 app.config.suppress_callback_exceptions = True
