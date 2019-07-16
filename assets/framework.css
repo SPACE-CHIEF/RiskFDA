@@ -1,0 +1,58 @@
+html {
+  box-sizing: border-box; }
+
+body {
+  background-color: #fffcf4;
+  color: #000000;
+  font-size: 1.3em;
+  font-family: 'Georgia';
+  padding: 0 10px;
+  text-align: center; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+.l-wrap {
+  max-width: 1140px;
+  margin-right: auto;
+  margin-left: auto; }
+
+.grid-item {
+  width: calc((100% - 20px * 2) / 2);
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  text-align: center;
+  background: #ffcdc9; }
+
+.column {
+  width: calc((100% - 20px * 8) / 8);
+  height: 80px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  float: left;
+  background-color: #cee1ff; }
+
+.one {
+  width: calc(100% - 20px); }
+
+.half {
+  width: calc((100% - 20px * 2) / 2); }
+
+.one-third {
+  width: calc((100% - 20px * 3) / 3); }
+
+.one-fourth {
+  width: calc((100% - 20px * 4) / 4); }
+
+.one-sixth {
+  width: calc((100% - 20px * 6) / 6); }
+
+.six.columns{ width: 49.75%;}
+.twelve.columns{ width: 100%; margin-left: 0; }
