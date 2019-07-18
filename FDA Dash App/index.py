@@ -9,7 +9,7 @@ import plotly.plotly as py
 from plotly import graph_objs as go
 import math
 from app import app
-from apps import supply, recalls
+from apps import supply, recalls, risk
 
 app.layout = html.Div(
     [
@@ -34,7 +34,7 @@ app.layout = html.Div(
                 id="tabs",
                 style={"height": "20", "verticalAlign": "middle"},
                 children=[
-                    # dcc.Tab(label="Risk", value="risk_tab"),
+                    dcc.Tab(label="Risk", value="risk_tab"),
                     # dcc.Tab(label="Adverse Events", value="adverse_tab"),
                     dcc.Tab(label="Supply Chain", value="supply_tab", style={'font-weight': 'bold'}),
                     dcc.Tab(id="recalls", label="Recalls Events", value="recalls_tab", style={'font-weight': 'bold'})
@@ -58,10 +58,10 @@ app.layout = html.Div(
         # Tab content
         html.Div(id="tab_content", className="row", style={"margin": "2% 3%"}),
     html.Link(
-            href="https://github.com/averma1/ladyphideas/blob/master/css/style.css",
+            href="https://cdn.rawgit.com/plotly/dash-app-stylesheets/2d266c578d2a6e8850ebce48fdb52759b2aef506/stylesheet-oil-and-gas.css",
             rel="stylesheet"),
 html.Link(
-            href="https://github.com/averma1/ladyphideas/blob/master/css/style.css",
+            href="https://cdn.rawgit.com/plotly/dash-app-stylesheets/2d266c578d2a6e8850ebce48fdb52759b2aef506/stylesheet-oil-and-gas.css",
             rel="stylesheet"),
         html.Link(href="https://fonts.googleapis.com/css?family=Dosis", rel="stylesheet"),
         html.Link(href="https://fonts.googleapis.com/css?family=Open+Sans", rel="stylesheet"),
@@ -77,14 +77,14 @@ html.Link(
 
 @app.callback(Output("tab_content", "children"), [Input("tabs", "value")])
 def render_content(tab):
-    # if tab == "risk_tab":
-    #     return risk.layout
     # elif tab == "adverse_tab":
     #     return adverse_events.layout
     if tab == "supply_tab":
         return supply.layout
     elif tab == "recalls_tab":
         return recalls.layout
+    elif tab == "risk_tab":
+        return risk.layout
     else:
         return supply.layout
 

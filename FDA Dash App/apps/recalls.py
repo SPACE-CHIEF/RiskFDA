@@ -31,7 +31,6 @@ layout = [
         ),
     ]),
     # Drop downs and time series graph
-        html.Div([
             html.Div([
                 html.Div(
                     dcc.Dropdown(
@@ -39,24 +38,26 @@ layout = [
                     value=['Virginia'],
                     multi=True,
                     options=[{'label': i, 'value': i} for i in recalls['Ingredient/Drug'].unique()],
-                    style={'margin-bottom': 10, "float": "center"},
+                    style={'margin-bottom': 10, "float": "center", "width": 280},
                     placeholder="Select a Drug"),
-                className="one-fourth column"),
+                className="three columns"),
                 html.Div(
                     dcc.Dropdown(
                     id='facility-selected',
                     value=['3M'],
                     multi=True,
                     options=[{'label': i, 'value': i} for i in recalls['Name of Process'].unique()],
-                    style={'margin-bottom': 10, "float": "center"},
+                    style={'margin-left': 10, 'margin-bottom': 10, "float": "center", "width": 305},
                     placeholder="Select a facility"),
-                className="one-fourth column"),
-        ], className="fixed-gutter-grid"),
-                html.Div(
-                    dcc.Graph(
-                    id='time-graph'),
-                    className="one-half column")
-    ], className="l-wrap")
+                className="three columns"),
+        ], className="row"),
+html.Div([
+        html.Div(
+            dcc.Graph(
+                id='time-graph'),
+            className="six columns")
+    ], className="row")
+
 ]
 
 @app.callback(
