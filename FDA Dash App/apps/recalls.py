@@ -38,18 +38,27 @@ layout = [
                     value=['Virginia'],
                     multi=True,
                     options=[{'label': i, 'value': i} for i in recalls['Ingredient/Drug'].unique()],
-                    style={'margin-bottom': 10, "float": "center", "width": 280},
+                    style={'margin-bottom': 10},
                     placeholder="Select a Drug"),
-                className="three columns"),
+                className="two columns"),
                 html.Div(
                     dcc.Dropdown(
                     id='facility-selected',
                     value=['3M'],
                     multi=True,
                     options=[{'label': i, 'value': i} for i in recalls['Name of Process'].unique()],
-                    style={'margin-left': 10, 'margin-bottom': 10, "float": "center", "width": 305},
+                    style={'margin-bottom': 10},
                     placeholder="Select a facility"),
-                className="three columns"),
+                className="two columns"),
+                html.Div(
+                    dcc.Dropdown(
+                    id='empty-selected',
+                    value=['3M'],
+                    multi=True,
+                    options=[{'label': 'empty', 'value': 'empty'}],
+                    style={'margin-bottom': 10},
+                    placeholder="Empty"),
+                className="two columns"),
         ], className="row"),
 html.Div([
         html.Div(

@@ -20,10 +20,9 @@ YEARS = [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019]
 layout = [
     html.Div([
         html.Div([
-            html.H1("Score Classification")],
+            html.H1("Risk Score Classification")],
             style={'textAlign': "center", "padding-bottom": "30"}),
-        html.Div([html.Span("Metric to display : ", className="six columns",
-                            style={"text-align": "right", "width": "40%", "padding-top": 10}),
+        html.Div([
                   html.Div([
                       dcc.Slider(
                           id='years-slider',
@@ -37,8 +36,6 @@ layout = [
               ], className="twelve columns")
     ])
 ]
-
-
 @app.callback(
     dash.dependencies.Output("my-graph", "figure"),
     [dash.dependencies.Input("years-slider", "value")]
@@ -47,32 +44,20 @@ def map_maker(year):
     dff = df[df['Year'] == year]
     print(dff.head(5))
     trace = [
-            go.Choropleth(
-                locations=dff['Code'],
-                locationmode='USA-states',
-                z=dff['Score_Classification'],
-                text=dff['Legal Name'],
-                colorscale="YlOrRd",
-            )
-        ]
+        go.Choropleth(
+            locations=dff['Code'],
+            locationmode='USA-states',
+            z=dff['Score_Classification'],
+            text=dff['Legal Name'],
+            colorscale="Portland",
+            geo = 'geo2'
+        )
+    ]
     layout = go.Layout(
-        autosize=True,
-        hovermode='closest',
-        geo_scope='usa',
-        showlegend=True,
-        height=700,
-        margin=dict(l=20, r=20, t=20, b=20),
-        mapbox={
-            'accesstoken': mapbox_access_token,
-            'bearing': 0,
-            'center': {
-                'lat': 38,
-                'lon': -94
-            },
-            'pitch': 30,
-            'zoom': 3,
-            'style': 'light'
-        }
+        geo2 = dict(
+            scope = 'usa',
+            projection=dict(type="albers usa"),
+        )
     )
     return {'data': trace, 'layout': layout}
 
